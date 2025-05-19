@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 import Homeproduct from "./home.product";
+import { AiFillEye, AiFillHeart } from "react-icons/ai";
 
 const Home = () => {
   const [trendingProduct, settrendingProduct] = useState(Homeproduct);
@@ -31,14 +32,23 @@ const Home = () => {
                   <h3>top selling</h3>
                 </div>
               </div>
-              <div className="product">
+              <div className="products">
                 <div className="container">
                   {trendingProduct.map((curElm) => {
                     return (
                       <>
                         <div className="box">
                           <div className="img_box">
-                            <img src="{curElm.img}"></img>
+                            <img src={curElm.image} alt=""></img>
+                            {/* <img src={curElm.image} alt={curElm.Name} /> */}
+                            <div className="icon">
+                              <div className="icon_box">
+                                <AiFillEye />
+                              </div>
+                              <div className="icon_box">
+                                <AiFillHeart />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </>
