@@ -3,9 +3,26 @@ import "./home.css";
 import { Link } from "react-router-dom";
 import Homeproduct from "./home.product";
 import { AiFillEye, AiFillHeart } from "react-icons/ai";
+import {
+  BiLogoFacebook,
+  BiLogoInstagram,
+  BiLogoTwitter,
+  BiLogoYoutube,
+} from "react-icons/bi";
 
 const Home = () => {
   const [trendingProduct, settrendingProduct] = useState(Homeproduct);
+  // filter of trending product
+  const filtercate = (x) => {
+    const filterproduct = Homeproduct.filter((curElm) => {
+      return curElm.type === x;
+    });
+    settrendingProduct(filterproduct);
+  };
+  // All Trending Product
+  const allTrendingProduct = () => {
+    settrendingProduct(Homeproduct);
+  };
   return (
     <>
       <div className="home">
@@ -24,12 +41,12 @@ const Home = () => {
             <div className="left_box">
               <div className="header">
                 <div className="heading">
-                  <h2>trending product</h2>
+                  <h2 onClick={() => allTrendingProduct()}>trending product</h2>
                 </div>
                 <div className="cate">
-                  <h3>New</h3>
-                  <h3>Featured</h3>
-                  <h3>top selling</h3>
+                  <h3 onClick={() => filtercate("new")}>New</h3>
+                  <h3 onClick={() => filtercate("featured")}>Featured</h3>
+                  <h3 onClick={() => filtercate("top")}>top selling</h3>
                 </div>
               </div>
               <div className="products">
@@ -50,6 +67,11 @@ const Home = () => {
                               </div>
                             </div>
                           </div>
+                          <div className="info">
+                            <h3>{curElm.Name}</h3>
+                            <p>${curElm.price}</p>
+                            <button className="btn">Add To Cart</button>
+                          </div>
                         </div>
                       </>
                     );
@@ -57,7 +79,57 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="right_box"></div>
+            <div className="right_box">
+              <div className="right_container">
+                <div className="testimonial">
+                  <div className="head">
+                    <h3>our testimonial</h3>
+                  </div>
+                  <div className="detail">
+                    <div className="img_box">
+                      <img src="image/T1.avif" alt="testmonial"></img>
+                    </div>
+                    <div className="info">
+                      <h3>stephan robot</h3>
+                      <h4>web desiner</h4>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="newsletter">
+                  <div className="head">
+                    <h3>newsletter</h3>
+                  </div>
+                  <div className="form">
+                    <p>join our mailing list</p>
+                    <input
+                      type="email"
+                      placeholder="E_mail"
+                      autoComplete="off"
+                    ></input>
+                    <button>subscribe</button>
+                    <div className="icon_box">
+                      <div className="icon">
+                        <BiLogoFacebook />
+                      </div>
+                      <div className="icon">
+                        <BiLogoTwitter />
+                      </div>
+                      <div className="icon">
+                        <BiLogoInstagram />
+                      </div>
+                      <div className="icon">
+                        <BiLogoYoutube />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

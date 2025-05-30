@@ -14,3 +14,6 @@ const App = () => {
   );
 };
 export default App;
+
+
+// to see in broser: https://e-commerce-kfaffh27p-ajay-kumar-vermas-projects-4b5c4e9a.vercel.app/
