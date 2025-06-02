@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 import Homeproduct from "./home.product";
@@ -11,6 +11,9 @@ import {
 } from "react-icons/bi";
 
 const Home = () => {
+  // Product category
+  const [newProduct, setNewProduct] = useState([]);
+  // Trending Product
   const [trendingProduct, settrendingProduct] = useState(Homeproduct);
   // filter of trending product
   const filtercate = (x) => {
@@ -23,6 +26,19 @@ const Home = () => {
   const allTrendingProduct = () => {
     settrendingProduct(Homeproduct);
   };
+
+  // Product Type
+  useEffect(() => {
+    productcategory();
+  });
+
+  const productcategory = () => {
+    const newcategory = Homeproduct.filter((x) => {
+      return x.type === "new";
+    });
+    setNewProduct(newcategory);
+  };
+
   return (
     <>
       <div className="home">
@@ -77,6 +93,7 @@ const Home = () => {
                     );
                   })}
                 </div>
+                <button>Show More</button>
               </div>
             </div>
             <div className="right_box">
@@ -129,6 +146,55 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="banners">
+          <div className="container">
+            <div className="left_box">
+              <div className="box">
+                <img src="image/Multi-Banner-1.avif" alt="banner"></img>
+              </div>
+              <div className="box">
+                <img src="image/Multi-Banner-2.avif" alt="banner"></img>
+              </div>
+            </div>
+            <div className="right_box">
+              <div className="top">
+                <img src="image/Multi-Banner-3.webp" alt=""></img>
+                <img src="image/Multi-Banner-4.avif" alt=""></img>
+              </div>
+              <div className="bottom">
+                <img src="image/Multi-Banner-5.webp" alt=""></img>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="product_type">
+          <div className="container">
+            <div className="box">
+              <div className="header">
+                <h2>New Product</h2>
+              </div>
+              {newProduct.map((curElm) => {
+                return (
+                  <>
+                    <div className="productbox">
+                      <div className="img-box">
+                        <img src={curElm.image} alt=""></img>
+                      </div>
+                      <div className="details">
+                        <h3>{curElm.Name}</h3>
+                        <p>$ {curElm.price}</p>
+                        <div className="icon">
+                          <button><AiFillEye /></button>
+                          <button><AiFillHeart /></button>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
             </div>
           </div>
         </div>

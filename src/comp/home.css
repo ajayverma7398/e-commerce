@@ -128,6 +128,18 @@
   display: flex;
   flex-wrap: wrap;
 }
+.home .trending .container .left_box .products button {
+  margin-top: 20px;
+  margin-left: 45%;
+  padding: 10px 30px;
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  background: #cd1e76;
+  cursor: pointer;
+}
 
 .home .trending .container .left_box .products .container .box {
   max-width: 195px;
@@ -390,4 +402,107 @@
   border: none;
   border: 1px solid #8a8a8a;
   color: #232323;
+}
+.home
+  .trending
+  .container
+  .right_box
+  .right_container
+  .newsletter
+  .form
+  button {
+  margin-top: 10px;
+  margin-left: 60px;
+  padding: 10px 30px;
+  border: none;
+  background: none;
+  outline: none;
+  background: #fed700;
+  color: #232323;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.home
+  .trending
+  .container
+  .right_box
+  .right_container
+  .newsletter
+  .form
+  .icon_box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home
+  .trending
+  .container
+  .right_box
+  .right_container
+  .newsletter
+  .form
+  .icon_box
+  .icon {
+  padding: 10px 10px;
+  border-radius: 50%;
+  border: 1px solid #cd1e76;
+  color: #cd1e76;
+  margin-bottom: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.home
+  .trending
+  .container
+  .right_box
+  .right_container
+  .newsletter
+  .form
+  .icon_box
+  .icon:hover {
+  color: #fff;
+  background: #cd1e76;
+}
+
+.home .banners {
+  padding: 20px 30px;
+  width: 100%;
+}
+
+.home .banners .container {
+  width: 100%;
+  display: flex;
+}
+
+.home .banners .container .left_box {
+  width: 24%;
+}
+
+.home .banners .container .left_box .box {
+  margin-top: 10px;
+}
+
+.home .banners .container .right_box {
+  width: 75%;
+}
+
+.home .banners .container .right_box .top {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.home .banners .container .right_box .bottom {
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+.home .banners .container .right_box .bottom img {
+  width: 100%;
+  object-fit: cover;
 }
