@@ -187,8 +187,12 @@ const Home = () => {
                         <h3>{curElm.Name}</h3>
                         <p>$ {curElm.price}</p>
                         <div className="icon">
-                          <button><AiFillEye /></button>
-                          <button><AiFillHeart /></button>
+                          <button>
+                            <AiFillEye />
+                          </button>
+                          <button>
+                            <AiFillHeart />
+                          </button>
                         </div>
                       </div>
                     </div>
